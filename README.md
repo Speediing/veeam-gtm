@@ -1,10 +1,13 @@
-# Grok Bot for Datadog GTM
+# Veeam x SpaceXAI
 
-Passworded site. Grok Bot from SpaceXAI, for Datadog GTM.
+Password-protected GTM leave-behind for Veeam.
 
-## What it is
+## Stack
 
-Three GTM jobs on one page. Each job has a short problem statement, an interactive Grok Bot demo, and the matching Krista Letz clips under that demo. Below that: a light index of the clips and the public Grok Bot quote wall.
+- Next.js 15.5
+- Geist
+- vgpu
+- `src/` application layout
 
 ## Run locally
 
@@ -14,18 +17,13 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000). Default password is `land2expand` (override with `SITE_PASSWORD`).
+Open [http://localhost:3000](http://localhost:3000). The default password is
+`land2expand`. Override it with `SITE_PASSWORD`.
 
-## Krista clips
-
-Download into `private/media/krista-clips/` from the GitHub release (served only through the passworded `/api/media/...` route):
-
-```bash
-gh release download krista-gtm-clips-720p-2026-08-26 \
-  --repo Speediing/grok-bot-quotes \
-  --dir private/media/krista-clips
-```
+The Veeam mark in `public/brand/veeam-wordmark.svg` comes from Veeam's official
+brand asset at `https://www.veeam.com/content/dam/veeam/brand/veeam_logo_26.svg`.
 
 ## Deploy
 
-Preview only under the `jasonwiker` Vercel team, project name `datadog-cro`. Set `SITE_PASSWORD=land2expand`. Do not promote to a public production domain until Jason says so.
+Use the `jasonwiker` Vercel team and project name `veeam-grokbot`. Set
+`SITE_PASSWORD=land2expand`.

@@ -1,7 +1,7 @@
 import type { Artifact, DemoMessage, SlideCard } from "@/data/types";
 import type { ComputerBeat } from "@/data/screens";
 import { CLIPS } from "@/data/clips";
-import { ACME_TAIL_SLIDES } from "@/data/jobs";
+import { RECOVERY_BRIEF_SLIDES } from "@/data/jobs";
 import { HeardSlide } from "./HeardSlide";
 
 function asSlides(artifact?: Artifact) {
@@ -130,31 +130,27 @@ function GranolaScreen({ account }: { account: string }) {
     <div className="site site-granola">
       <header>
         <strong>Granola</strong>
-        <span>Live · last 20 min</span>
+        <span>Live sample call</span>
       </header>
       <p className="site-time">Still on the call · Granola in</p>
       <ul>
         <li>
-          <span>14:12</span> Start with APM + Logs in one team. Not a product
-          tour.
+          <span>Scope</span> Confirm the workloads in the sample recovery plan.
         </li>
         <li>
-          <span>14:18</span> Security: SSO and an audit trail before any extra
-          products.
+          <span>Owner</span> Name the owner who will review the restore path.
         </li>
         <li>
-          <span>14:21</span> Soft yes on a Bits AI trial if those two are named.
+          <span>Meeting</span> Keep the next meeting focused on the open questions.
         </li>
         <li>
-          <span>14:24</span> Cost mentioned once. RUM not in the room.
+          <span>Sources</span> Use approved sources for every product answer.
         </li>
         <li>
-          <span>14:28</span> Your contact will take a Tuesday with a security
-          co-owner.
+          <span>People</span> Bring the recovery owner to the next review.
         </li>
         <li>
-          <span>14:31</span> Use cases named live on the demo. Sev-2 story,
-          one team, SSO as the gate.
+          <span>Brief</span> Sample recovery brief updated for the rep.
         </li>
       </ul>
     </div>
@@ -171,7 +167,7 @@ function FigmaScreen({
   const slides = asSlides(artifact);
   const packet = artifact?.kind === "packet" ? artifact : null;
   const pager = asOnePager(artifact);
-  const cards: SlideCard[] = slides?.cards ?? ACME_TAIL_SLIDES;
+  const cards: SlideCard[] = slides?.cards ?? RECOVERY_BRIEF_SLIDES;
 
   return (
     <div className="site site-figma">
@@ -220,17 +216,15 @@ function GongScreen({ account }: { account: string }) {
     <div className="site site-gong">
       <header>
         <strong>Gong</strong>
-        <span>
-          {account} · first meeting · 32 min
-        </span>
+        <span>{account} · sample meeting</span>
       </header>
       <div className="gong-recap">
         <h4>Call recap</h4>
         <ul>
-          <li>They have APM + Logs</li>
-          <li>Security lead in the room</li>
-          <li>Cost mentioned once</li>
-          <li>No one who can sign was on the call</li>
+          <li>Workloads in scope need review</li>
+          <li>Recovery owner needs confirmation</li>
+          <li>Restore path is still a draft</li>
+          <li>Next meeting needs an approver</li>
         </ul>
       </div>
     </div>
@@ -252,23 +246,23 @@ function SfdcAccountScreen({ account }: { account: string }) {
       <dl className="sfdc-fields">
         <div>
           <dt>Has now</dt>
-          <dd>APM + Logs</dd>
+          <dd>Recovery review</dd>
         </div>
         <div>
-          <dt>Security lead</dt>
-          <dd>In first meeting</dd>
+          <dt>Recovery owner</dt>
+          <dd>Needs confirmation</dd>
         </div>
         <div>
-          <dt>Cost</dt>
-          <dd>Mentioned once</dd>
+          <dt>Workload scope</dt>
+          <dd>Drafted</dd>
         </div>
         <div>
-          <dt>Who can sign</dt>
+          <dt>Next approver</dt>
           <dd>Not confirmed</dd>
         </div>
       </dl>
       <table className="sfdc-related">
-        <caption>Next 90 days</caption>
+        <caption>Sample recovery plan</caption>
         <thead>
           <tr>
             <th>Product</th>
@@ -278,24 +272,24 @@ function SfdcAccountScreen({ account }: { account: string }) {
         </thead>
         <tbody>
           <tr>
-            <td>Bits AI</td>
-            <td>Platform eng manager</td>
-            <td>Day 15 to 45</td>
+            <td>Workload scope</td>
+            <td>Recovery owner</td>
+            <td>Next review</td>
           </tr>
           <tr>
-            <td>Cloud SIEM</td>
-            <td>Security lead</td>
-            <td>Day 15 to 45</td>
+            <td>Restore path</td>
+            <td>Solution owner</td>
+            <td>After scope review</td>
           </tr>
           <tr>
-            <td>Cost</td>
-            <td>FinOps alias</td>
-            <td>Day 45 to 90</td>
+            <td>Open questions</td>
+            <td>Account team</td>
+            <td>Before customer send</td>
           </tr>
           <tr>
-            <td>RUM</td>
-            <td>Frontend guild</td>
-            <td>Day 45 to 90</td>
+            <td>Test plan</td>
+            <td>Customer owner</td>
+            <td>After approval</td>
           </tr>
         </tbody>
       </table>
@@ -320,29 +314,29 @@ function SfdcOppScreen({
       <div className="sfdc-title">
         <p>Opportunity</p>
         <h3>
-          {account} · $1.4M
+          {account} recovery project
         </h3>
       </div>
       <dl className="sfdc-fields">
         <div>
           <dt>Stage</dt>
-          <dd>4 · this quarter</dd>
+          <dd>Sample review</dd>
         </div>
         <div className={highlight ? "gap" : undefined}>
-          <dt>Signer meeting</dt>
-          <dd>None on calendar</dd>
+          <dt>Approval meeting</dt>
+          <dd>Not scheduled</dd>
         </div>
         <div className={highlight ? "gap" : undefined}>
-          <dt>Legal</dt>
-          <dd>Slow · no dated path</dd>
+          <dt>Review path</dt>
+          <dd>No owner yet</dd>
         </div>
         <div className={highlight ? "gap" : undefined}>
-          <dt>Inside contact</dt>
-          <dd>Likes us · weak map</dd>
+          <dt>Recovery contact</dt>
+          <dd>Needs a clear map</dd>
         </div>
         <div className={highlight ? "gap" : undefined}>
-          <dt>Cloud SIEM</dt>
-          <dd>Not in the story</dd>
+          <dt>Restore test</dt>
+          <dd>Not in the plan</dd>
         </div>
       </dl>
     </div>
@@ -360,22 +354,22 @@ function SheetsScreen({
   const rows = table
     ? table.rows
     : [
-        [account, "Inside contact", "Signer TBD", "APM + Logs", "Tue SIEM"],
-        ["Globex", "VP Eng", "CISO", "APM + Logs", "First meeting"],
-        ["Initech", "SRE lead", "CTO", "APM + Logs", "Bits AI"],
-        ["Umbrella", "Sec eng", "CISO", "APM + Logs", "Open source drill"],
-        ["Hooli", "Platform", "Signer TBD", "APM + Logs", "Cost later"],
+        [account, "Recovery contact", "Approver TBD", "Workload scope", "Review"],
+        ["Sample account B", "IT owner", "Approver TBD", "Restore path", "Review"],
+        ["Sample account C", "Ops owner", "CIO", "Open questions", "Meeting"],
+        ["Sample account D", "Recovery lead", "CIO", "Test plan", "Review"],
+        ["Sample account E", "Infrastructure", "Approver TBD", "Sources", "Later"],
       ];
   const cols = table
     ? table.columns
-    : ["Account", "Inside contact", "Who can sign", "Start with", "Next"];
+    : ["Account", "Contact", "Approver", "Start with", "Next"];
 
   return (
     <div className="site site-sheets">
       <header>
         <span className="sheets-mark">Sheets</span>
         <strong>
-          {table ? `${account} next 90 days` : "5 accounts x 5 prospects"}
+          {table ? `${account} recovery plan` : "Sample account list"}
         </strong>
       </header>
       <table>
@@ -421,7 +415,7 @@ function GmailScreen({
       </p>
       <p>
         <span>Subject</span>
-        {artifact?.subject || `${account} / Datadog`}
+        {artifact?.subject || `${account} recovery review`}
       </p>
       <div>{artifact?.body || "Draft parked here until you tap Send?"}</div>
     </div>
@@ -472,7 +466,7 @@ function GdocScreen({
           {forecast
             ? `${account} forecast`
             : talks
-              ? "Bits AI talk tracks"
+              ? "Recovery talk tracks"
               : packet
                 ? packet.title
                 : onePager?.title || `${account} brief`}
@@ -514,26 +508,24 @@ function ResearchScreen({ account }: { account: string }) {
   return (
     <div className="site site-research">
       <header>
-        <strong>{account}.com</strong>
-        <span>Public · last 30 days</span>
+        <strong>{account} public research</strong>
+        <span>Sample public sources</span>
       </header>
       <p className="site-time">Researching the account · not a sequence</p>
       <ul>
         <li>
-          <span>Status</span> Sev-2, 14 days ago. 47 minutes to name the failing
-          service. Postmortem still says they jumped three tools.
+          <span>Update</span> Sample continuity page mentions a recovery review.
         </li>
         <li>
-          <span>Careers</span> Staff SRE JD: experience stitching APM and logs
-          across teams. Posted this month.
+          <span>Careers</span> Sample role covers backup operations and recovery
+          planning.
         </li>
         <li>
-          <span>Blog</span> We outgrew homegrown dashboards. No named
-          replacement.
+          <span>News</span> Sample company update names continuity as a focus.
         </li>
         <li>
-          <span>Org</span> VP Eng owns time-to-fix. Platform director sits on
-          that stitch.
+          <span>Owner</span> Recovery and infrastructure leaders are the
+          relevant contacts.
         </li>
       </ul>
     </div>

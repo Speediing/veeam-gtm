@@ -11,7 +11,7 @@ function OutboundPack({
 
   return (
     <div className="leave leave-out-phone">
-      <div className="out-phone" aria-label="Sales Outbound approval chat">
+      <div className="out-phone" aria-label="Scout approval chat">
         <div className="out-phone-notch" aria-hidden />
         <header className="out-phone-header">
           <span className="out-phone-back" aria-hidden>
@@ -21,7 +21,7 @@ function OutboundPack({
             ✦
           </span>
           <p>
-            <strong>Sales Outbound</strong>
+            <strong>Scout</strong>
             <small>{artifact.account} · drafts ready</small>
           </p>
           <span className="out-phone-desktop" aria-hidden>
@@ -31,21 +31,21 @@ function OutboundPack({
 
         <div className="out-phone-thread">
           <article className="out-email-card">
-            <p className="out-email-label">Draft email · 1 of 10</p>
+            <p className="out-email-label">Draft email</p>
             <p className="out-email-subject">
-              Subject · {artifact.account}&apos;s last Sev-2
+              Subject · {artifact.account} recovery readiness
             </p>
             <div className="out-email-copy">
               <p>Hi {firstName},</p>
               <p>
-                Your status page and open Staff SRE role point to the same
-                thing: on-call still stitches APM and logs to name a Sev-2.
+                I saw the sample continuity update and the open recovery role.
+                Both point to a review of recovery ownership.
               </p>
               <p>
-                I put together the 90-second version for your platform team.
-                Worth fifteen minutes next week?
+                I put together a short brief on the workloads, restore path,
+                and owners your team may want to review.
               </p>
-              <p>Sam</p>
+              <p>Veeam account team</p>
             </div>
             <footer>
               <span>Send email</span>
@@ -53,17 +53,15 @@ function OutboundPack({
             </footer>
           </article>
 
-          <p className="out-message is-you">
-            Send the top 10 emails. They look good.
-          </p>
+          <p className="out-message is-you">Keep these as drafts. I want to check the sources.</p>
           <p className="out-message is-bot">
-            Top 10 sending. The rest stay queued.
+            Drafts parked. Nothing will send until you approve it.
           </p>
         </div>
 
         <footer className="out-phone-composer">
           <span aria-hidden>+</span>
-          <p>Message Sales Outbound</p>
+          <p>Message Scout</p>
           <span aria-hidden>◉</span>
         </footer>
       </div>
@@ -82,7 +80,7 @@ function UpstairsMemo({
         <div>
           <p className="leave-kicker">{artifact.title}</p>
           <h3>
-            {artifact.account || "Acme"}
+            {artifact.account || "Sample account"}
             {artifact.amount ? ` · ${artifact.amount}` : ""}
           </h3>
         </div>
@@ -156,10 +154,10 @@ function BetterAnswer({
           <p className="leave-kicker">Say this</p>
           <p className="leave-win">{artifact.betterAnswer}</p>
           <p className="leave-incident" aria-hidden>
-            <span>Prometheus</span>
-            <span>Grafana</span>
-            <span>Log pile</span>
-            <b>APM + Logs</b>
+            <span>Current process</span>
+            <span>Open questions</span>
+            <span>Named owner</span>
+            <b>Recovery plan</b>
           </p>
         </section>
       </div>
